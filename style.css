@@ -56,6 +56,11 @@ a {
 	display: block;
 }
 
+.content video {
+	max-width: 100%;
+	display: block;
+}
+
 .half {
 	max-width: 49% !important;
 	display: inline-block !important;
