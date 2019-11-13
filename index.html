@@ -109,23 +109,51 @@
 		float e = 1.0e-10;
 		return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
 	}
+
+	float getZ (vec2 uv) {
+		return rgb2hsv(texture2D(video, uv).rgb).x;
+	}
+
+	vec3 getPos (vec2 uv, float dmin, float dmax) {
+		float z = getZ(uv);
+		float depth = mix(dmin, dmax, z);
+		float proj = (dmin+depth)/2.;
+		vec2 aspect = vec2(512./414.,1.);
+		vec3 pos;
+		pos.z = -(z*2.-1.)*2.;
+		pos.xy = (uv*2.-1.)*proj*aspect;
+		pos.xyz = mix(pos.xyz, vec3(0,1000,0), step(z, 0.01));
+		return pos.xzy;
+	}
+
 	void main () {
 		vec4 pos = position;
 		float index = floor(pos.x*512.*424.);
 		vec2 uv = vec2(mod(index,512.)/512., floor(index/512.)/424.);
-		vec4 kinect = texture2D(video, uv);
-		float z = rgb2hsv(kinect.rgb).x;
 		float dmin = 0.82;
 		float dmax = 2.97;
-		float depth = mix(dmin, dmax, z);
-		float proj = (dmin+depth)/2.;
-		vec2 aspect = vec2(512./414.,1.);
-		pos.z = -(z*2.-1.)*2.;
-		pos.xy = (uv*2.-1.)*proj*aspect;
-		pos.xyz = pos.xzy;
-		pos.xyz = mix(pos.xyz, vec3(0,1000,0), step(z, 0.01));
-		vColor = vec4(1);
-		gl_Position = viewProjection * world * pos;
+		pos.xyz = getPos(uv, dmin, dmax);
+
+
+		vec2 e = 1./vec2(512., 424.);
+		vec3 north = getPos(uv+vec2(0,e.y), dmin, dmax);
+		vec3 south = getPos(uv-vec2(0,e.y), dmin, dmax);
+		vec3 westh = getPos(uv-vec2(e.x,0), dmin, dmax);
+		vec3 easth = getPos(uv+vec2(e.x,0), dmin, dmax);
+		vec3 normal = normalize(cross(south-north, westh-easth)).xzy;
+		
+		pos.xyz = mix(pos.xyz, vec3(0,1000,0), step(0.1, abs(north.y-south.y)+abs(westh.y-easth.y)));
+
+		vColor = vec4(vec3(.1),1);
+		// vColor.rgb = abs(normal);
+		vec3 light = vec3(sin(time),0,0);
+		pos = world * pos;
+		gl_Position = viewProjection * pos;
+		vec2 screen = gl_Position.xy/gl_Position.z;
+		vColor.gb = screen*0.5+0.5;
+		vColor.r += 3. * pow(clamp(dot(normal, normalize(pos.xyz-light))*0.5+0.5, 0., 1.), 5.) * smoothstep(4.,0.,length(pos.xyz-light));
+		vColor.rgb *= smoothstep(1.0,.8,abs(screen.y));
+		vColor.rgb *= smoothstep(1.0,.8,abs(screen.x));
 		gl_PointSize = 1.0;
 	}
 	</script>
