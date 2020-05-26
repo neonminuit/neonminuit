@@ -1,0 +1,45 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>NEON MINUIT</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="NEON MINUIT">
+	<link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200|Nunito|Open+Sans+Condensed:300|Poppins|Quicksand|Roboto|ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+</head>
+<body>
+	<canvas id="canvas" class="fullscreen"></canvas>
+
+	<script src="twgl-full.min.js" type="text/javascript"></script>
+	<script id="vs" type="notjs">
+	precision mediump float;
+	attribute vec4 position;
+	uniform mat4 viewProjection, world;
+	uniform float time;
+	varying vec4 vColor;
+
+	void main () {
+		vec4 pos = position;
+		gl_Position = viewProjection * world * pos;
+		gl_PointSize = 1.0;
+		vColor = vec4(1);
+	}
+	</script>
+	<script id="fs" type="notjs">
+	precision mediump float;
+	uniform float time;
+	varying vec4 vColor;
+
+	void main() {
+		gl_FragColor = vColor;
+	}
+	</script>
+	<script src="mouse.js" type="text/javascript"></script>
+	<script src="bitreader.js" type="text/javascript"></script>
+	<script src="ply.js" type="text/javascript"></script>
+</body>
+</html>
