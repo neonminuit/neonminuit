@@ -84,7 +84,32 @@ canvas {
 
 .content {
 	max-width: 800px;
-	margin: 0px auto 50px auto;
+	padding: 10px;
+	/* margin: 0px auto 50px auto; */
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	max-width: 400px;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.centerFlex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
 }
 
 .content img {
