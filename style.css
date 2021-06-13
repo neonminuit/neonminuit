@@ -83,25 +83,8 @@ canvas {
 }
 
 .content {
-	max-width: 800px;
-	padding: 10px;
+	max-width: 1200px;
 	/* margin: 0px auto 50px auto; */
-}
-
-.container {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
-}
-
-.center {
-	margin: 0;
-	position: absolute;
-	max-width: 400px;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
 }
 
 .centerFlex {
@@ -113,16 +96,11 @@ canvas {
 }
 
 .content img {
-	max-width: 100%;
+	max-width: 1200px;
 	display: block;
 }
 
 .content video {
-	max-width: 100%;
+	width: 1200px;
 	display: block;
-}
-
-.half {
-	max-width: 49% !important;
-	display: inline-block !important;
 }
