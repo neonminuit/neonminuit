@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "staatliches";
+  src: url("../font/staatliches-regular-webfont.woff2") format("woff2"),
+    url("../font/staatliches-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "antonregular";
+  src: url("../font/anton-regular-webfont.woff2") format("woff2"),
+    url("../font/anton-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotoslab";
+  src: url("../font/robotoslab-variablefont_wght-webfont.woff2") format("woff2"),
+    url("../font/robotoslab-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotomono";
+  src: url("../font/robotomono-variablefont_wght-webfont.woff2") format("woff2"),
+    url("../font/robotomono-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inconsolata";
+  src: url("../font/inconsolata-variablefont_wdthwght-webfont.woff")
+      format("woff2"),
+    url("../font/inconsolata-variablefont_wdthwght-webfont.woff2")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "bebasneue";
+  src: url("../font/BebasNeue-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "hammersmith";
+  src: url("../font/hammersmithone-regular-webfont.woff2") format("woff2"),
+    url("../font/hammersmithone-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "opensans";
+  src: url("../font/opensans-regular-webfont.woff2") format("woff2"),
+    url("../font/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
