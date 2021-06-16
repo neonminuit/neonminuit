@@ -102,7 +102,7 @@ canvas {
 }
 
 .margin-bottom-header {
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 .content {
@@ -121,7 +121,7 @@ canvas {
 }
 
 .post {
-  margin-bottom: 10em;
+  margin-bottom: 5em;
 }
 
 .grid {
@@ -137,4 +137,9 @@ canvas {
 
 .grid-full-column {
   grid-column-end: span 2;
+}
+
+table {
+  width: 100%;
+  font-size: 1em;
 }
