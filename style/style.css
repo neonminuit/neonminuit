@@ -39,6 +39,7 @@ h4 {
   font-size: 1.3em;
   line-height: 1.8em;
   text-align: left;
+  display: inline;
 }
 
 a {
@@ -107,6 +108,8 @@ canvas {
 
 .content {
   max-width: 800px;
+  margin-top: 5em;
+  margin-bottom: 5em;
   /* margin: 0px auto 50px auto; */
 }
 
