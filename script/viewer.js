@@ -5,6 +5,7 @@ import { camera } from './camera.js'
 import { frame_vertex, frame_pixel } from '../shader/frame.js'
 import { point_vertex, point_pixel } from '../shader/point.js'
 import { ao_pixel } from '../shader/ao.js'
+import { persistent } from './persistent.js'
 const m4 = twgl.m4;
 const glsl = x => x;
 
@@ -18,21 +19,11 @@ export function viewer (canvas, plyName)
     const plane = twgl.createBufferInfoFromArrays(gl, { position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0] });
     
     gl.getExtension("OES_texture_float");
-    // gl.getExtension("OES_texture_float_linear");
     var frameOptions = [{ type: gl.FLOAT, minMag: gl.NEAREST }]
     var frameDepthOptions = [{ type: gl.FLOAT, minMag: gl.NEAREST }, { format: gl.DEPTH_STENCIL }]
     const frameDepth = twgl.createFramebufferInfo(gl, frameDepthOptions);
     const framesAO = [twgl.createFramebufferInfo(gl, frameOptions),twgl.createFramebufferInfo(gl, frameOptions)];
     const frames = [ framesAO ].flat();
-    
-    // loop parameters
-    let settings = {
-        update: true,
-        free: false,
-        mouse: [0, 0],
-        clic: false,
-        wheel: 0,
-    };
     
     // time parameters
     let tick = 0;
@@ -47,9 +38,29 @@ export function viewer (canvas, plyName)
         frameDepth: 0,
         frameAO: 0,
         temporal: 0,
-        
-        // maps
         blueNoiseMap: twgl.createTexture(gl, { src: "image/bluenoise_shadertoy.png" } ),
+    };
+    
+    // camera
+    let eye = [0,0,0];
+    let target = [0,0,0];
+    let up = [0, 1, 0];
+    let aspect =  1;
+    let projection = m4.identity();
+    let orbit = m4.identity();
+    let world = m4.identity();
+    let mouse_prev = { x: 0, y: 0 };
+    let mouse_dt = { x: 0, y: 0 };
+    let mouse_orbit = { x: persistent.mouse_orbit[0], y: persistent.mouse_orbit[1] };
+    let orbit_distance = persistent.orbit_distance;
+    
+    let settings = {
+        update: true,
+        free: false,
+        mouse: [0, 0],
+        clic: false,
+        wheel: 0,
+        perspective: 0,
     };
     
     // plys
@@ -67,10 +78,6 @@ export function viewer (canvas, plyName)
         }
     } );
 
-    // camera
-    let cam = camera();
-    let aspect = gl.canvas.width / gl.canvas.height;
-
     // main loop
     function render(time) {
 
@@ -87,6 +94,7 @@ export function viewer (canvas, plyName)
                 frames.forEach(frame => twgl.resizeFramebufferInfo(gl, frame, frameOptions));
                 twgl.resizeFramebufferInfo(gl, frameDepth, frameDepthOptions);
                 aspect = gl.canvas.width / gl.canvas.height;
+                projection = m4.perspective(60 * Math.PI / 180, aspect, .01, 100.);
             }
             gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
@@ -95,18 +103,50 @@ export function viewer (canvas, plyName)
             elapsed += dt;
             parameters.time = elapsed;
             
+            // mouse
             let mouse = { x: 0, y: 0 };
             mouse.x = ((settings.mouse[0]/gl.canvas.width)*2.-1.)*aspect;
             mouse.y = (settings.mouse[1]/gl.canvas.width)*2.-1.;
+            mouse_dt.x = mouse.x - mouse_prev.x;
+            mouse_dt.y = mouse.y - mouse_prev.y;
+            mouse_prev.x = mouse.x;
+            mouse_prev.y = mouse.y;
+            if (settings.clic) {
+                mouse_orbit.x += mouse_dt.x;
+                mouse_orbit.y += mouse_dt.y;
+            }
+            if (settings.wheel < 0) {
+                orbit_distance += dt*5;
+            } else if (settings.wheel > 0) {
+                orbit_distance -= dt*5;
+            }
 
-            parameters.perspective = cam(aspect, mouse, settings.clic, settings.wheel, dt);
+            // camera
+            orbit = m4.identity();
+            orbit = m4.rotateY(orbit, -mouse_orbit.x*1.5);
+            orbit = m4.rotateX(orbit, -mouse_orbit.y*1.5);
+            orbit = m4.translate(orbit, [0,0,orbit_distance]);
+            eye = m4.getTranslation(orbit);
+            world = m4.translation([0,-.3,0]);
+            settings.perspective = m4.multiply(m4.multiply(projection, m4.inverse(m4.lookAt(eye, target, up))), world);
+
+            persistent.mouse_orbit[0] = mouse_orbit.x;
+            persistent.mouse_orbit[1] = mouse_orbit.y;
+            persistent.orbit_distance = orbit_distance;
             
-            if (settings.clic || settings.wheel != 0) {
+            Object.keys(persistent).forEach((key) => {
+                localStorage.setItem(key, persistent[key])
+            })
+            
+            // temporal
+            if ((settings.clic && (Math.abs(mouse_dt.x) > 0. || Math.abs(mouse_dt.y) > 0.)) || settings.wheel != 0) {
                 parameters.temporal = 0;
             } else {
                 parameters.temporal = 1;
             }
 
+            parameters.perspective = settings.perspective;
+            // console.log(parameters.perspective);
             settings.wheel = 0;
 
             // render

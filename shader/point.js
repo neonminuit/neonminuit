@@ -7,6 +7,7 @@ attribute vec3 position;
 attribute vec3 normal;
 attribute vec3 color;
 attribute vec2 anchor;
+uniform float time;
 uniform mat4 perspective;
 uniform vec2 resolution;
 varying vec2 uv;
@@ -25,11 +26,14 @@ void main()
 {
     vec3 p = position.xyz;
     vec3 rng = hash33(p*100.);
-    float size = 4. + 4. * rng.y;
-    // p += normal * .003 * rng.x;
+    float size = 4.;// + 20. * pow(rng.y, 40.);
+    // float anim = fract(rng.x  + time);
+    // size *= sin(anim*3.14);
+    // p += normal * .01 * anim;
+    // p.y += .05*cos(length(p)*20.+time);
     // vec3 x = normalize(cross(normal, vec3(0,1,0)));
     // vec3 y = normalize(cross(x, normal));
-    // p += (x * uv.x + y * uv.y) * size;
+    // p += (x * anchor.x + y * anchor.y) * size / 1000.;
     gl_Position = perspective * vec4(p, 1);
     gl_Position.xy += anchor * size / resolution;
     v_color = color;
