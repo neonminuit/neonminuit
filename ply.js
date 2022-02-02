@@ -1,7 +1,7 @@
 
 const glsl = x => x;
 
-import { viewer } from "./viewer.js";
+import { viewer } from "./script/viewer.js";
 
 const canvas = document.getElementById("shader");
 const app = viewer(canvas);
