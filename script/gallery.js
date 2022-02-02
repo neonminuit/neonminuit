@@ -1,10 +1,10 @@
 
 const glsl = x => x;
 
-import { pointcloud } from "./pointcloud.js";
+import { viewer } from "./viewer.js";
 
 const canvas = document.getElementById("shader");
-const app = pointcloud(canvas);
+const app = viewer(canvas);
 
 // canvas.addEventListener("mouseleave", event => test.update = false);
 // canvas.addEventListener("mouseenter", event => test.update = true);
@@ -12,6 +12,11 @@ const app = pointcloud(canvas);
 canvas.addEventListener("mousemove", event => {
     app.mouse = [ event.clientX, event.clientY ];
 });
+
+canvas.addEventListener("touchmove", event => {
+    app.mouse = [ event.changedTouches[0].pageX, event.changedTouches[0].pageY ];
+});
+
 
 canvas.addEventListener("mousedown", event => {
     app.clic = true;
@@ -28,6 +33,14 @@ canvas.addEventListener("mouseup", event => {
 
 canvas.addEventListener("mouseleave", event => {
     app.clic = false;
+});
+
+canvas.addEventListener("touchend", event => {
+    app.clic = false;
+});
+
+canvas.addEventListener("touchstart", event => {
+    app.clic = true;
 });
 
 canvas.addEventListener("wheel", event => {

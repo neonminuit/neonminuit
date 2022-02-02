@@ -15,10 +15,11 @@ void main()
 
 export const frame_pixel = glsl`
 precision mediump float;
+uniform sampler2D frameAO;
 varying vec2 uv;
 
 void main()
 {
-    gl_FragColor = vec4(uv*.1, 0, 1);
+    gl_FragColor = texture2D(frameAO, uv);
 }
 `+"";

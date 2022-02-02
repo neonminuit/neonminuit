@@ -2,8 +2,8 @@
 import * as twgl from './twgl-full.module.js'
 const m4 = twgl.m4;
 
-let eye = [1, 0, -.5];
-let target = [.0, .0, 0];
+let eye = [0,0,0];
+let target = [0,0,0];
 let up = [0, 1, 0];
 
 let aspect =  1;
@@ -14,7 +14,7 @@ let world = m4.identity();
 let mouse_prev = { x: 0, y: 0 };
 let mouse_dt = { x: 0, y: 0 };
 let mouse_orbit = { x: 0, y: 0 };
-let orbit_distance = 1;
+let orbit_distance = 1.5;
 
 export function camera () {
 
