@@ -15,13 +15,13 @@ void main()
     float depth = frame.a;
     
     // could be uniforms, with GUI interaction
-    float radius = 100.;
-    float strength = 10.;
+    float radius = 10.;
+    float strength = 100.;
     float temporalBlend = .97;
     
     
     // blue noise offset
-    vec2 seed = gl_FragCoord.xy/1024.+fract(time);
+    vec2 seed = gl_FragCoord.xy/1024.+fract(time)*1337.;
     vec3 bluenoise = texture2D(blueNoiseMap, fract(seed)).rgb;
     vec2 jitter = (bluenoise.xy*2.-1.)*bluenoise.z*radius/resolution.xy;
 
@@ -31,13 +31,13 @@ void main()
     // apply difference as a shade
     diff = 1.-clamp(diff*strength, 0., 1.);
 
-    // temporal noise attenuation
     diff = mix(diff, texture2D(frameAO, uv).a, temporalBlend);
-
+    
     if (depth == 0.) {
         ply_color = vec3(1);
     }
     if (temporal > 0.5) {
+        // temporal noise attenuation
         gl_FragColor = vec4(ply_color * diff, diff);
     } else {
         gl_FragColor = vec4(ply_color, 1);

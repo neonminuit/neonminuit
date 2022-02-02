@@ -4,7 +4,7 @@ const glsl = x => x;
 import { viewer } from "./script/viewer.js";
 
 const canvas = document.getElementById("shader");
-const app = viewer(canvas);
+const app = viewer(canvas, canvas.innerHTML);
 
 // canvas.addEventListener("mouseleave", event => test.update = false);
 // canvas.addEventListener("mouseenter", event => test.update = true);
@@ -14,7 +14,7 @@ canvas.addEventListener("mousemove", event => {
 });
 
 canvas.addEventListener("touchmove", event => {
-    app.mouse = [ event.changedTouches[0].pageX, event.changedTouches[0].pageY ];
+    app.mouse = [ event.changedTouches[0].clientX, event.changedTouches[0].clientY ];
 });
 
 

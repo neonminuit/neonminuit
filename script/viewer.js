@@ -3,16 +3,16 @@ import * as twgl from './twgl-full.module.js'
 import { particles } from './particles.js'
 import { camera } from './camera.js'
 import { frame_vertex, frame_pixel } from '../shader/frame.js'
-import { ply_vertex, ply_pixel, ply_depth } from '../shader/ply.js'
+import { point_vertex, point_pixel } from '../shader/point.js'
 import { ao_pixel } from '../shader/ao.js'
 const m4 = twgl.m4;
 const glsl = x => x;
 
-export function viewer (canvas)
+export function viewer (canvas, plyName)
 {
     // webgl components
     const gl = canvas.getContext("webgl");
-    const shaderPoints = twgl.createProgramInfo(gl, [ply_vertex, ply_depth]);
+    const shaderPoints = twgl.createProgramInfo(gl, [point_vertex, point_pixel]);
     const shaderAO = twgl.createProgramInfo(gl, [frame_vertex, ao_pixel]);
     const shaderFrame = twgl.createProgramInfo(gl, [frame_vertex, frame_pixel]);
     const plane = twgl.createBufferInfoFromArrays(gl, { position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0] });
@@ -55,7 +55,7 @@ export function viewer (canvas)
     // plys
     let points = null;
     const loader = new THREE.PLYLoader();
-    loader.load( './ply/MEC_Foreuse_200K.ply', function ( geometry ) {
+    loader.load( './ply/'+plyName+'.ply', function ( geometry ) {
         let p = particles({
             position: geometry.attributes.position.array,
             normal: geometry.attributes.normal.array,
