@@ -1,10 +1,9 @@
 
 import * as twgl from './twgl-full.module.js'
 import { particles } from './particles.js'
-import { camera } from './camera.js'
 import { frame_vertex, frame_pixel } from '../shader/frame.js'
-import { point_vertex, point_pixel } from '../shader/point.js'
-import { ao_pixel } from '../shader/ao.js'
+import { point_vertex, point_pixel, point_normal_pixel } from '../shader/point.js'
+import { filter_pixel } from '../shader/filter.js'
 import { persistent } from './persistent.js'
 const m4 = twgl.m4;
 const glsl = x => x;
@@ -14,16 +13,18 @@ export function viewer (canvas, plyName)
     // webgl components
     const gl = canvas.getContext("webgl");
     const shaderPoints = twgl.createProgramInfo(gl, [point_vertex, point_pixel]);
-    const shaderAO = twgl.createProgramInfo(gl, [frame_vertex, ao_pixel]);
+    const shaderNormal = twgl.createProgramInfo(gl, [point_vertex, point_normal_pixel]);
+    const shaderFilter = twgl.createProgramInfo(gl, [frame_vertex, filter_pixel]);
     const shaderFrame = twgl.createProgramInfo(gl, [frame_vertex, frame_pixel]);
     const plane = twgl.createBufferInfoFromArrays(gl, { position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0] });
     
     gl.getExtension("OES_texture_float");
     var frameOptions = [{ type: gl.FLOAT, minMag: gl.NEAREST }]
-    var frameDepthOptions = [{ type: gl.FLOAT, minMag: gl.NEAREST }, { format: gl.DEPTH_STENCIL }]
-    const frameDepth = twgl.createFramebufferInfo(gl, frameDepthOptions);
-    const framesAO = [twgl.createFramebufferInfo(gl, frameOptions),twgl.createFramebufferInfo(gl, frameOptions)];
-    const frames = [ framesAO ].flat();
+    var framePointsOptions = [{ type: gl.FLOAT, minMag: gl.NEAREST }, { format: gl.DEPTH_STENCIL }]
+    const framePoints = twgl.createFramebufferInfo(gl, framePointsOptions);
+    const frameNormal = twgl.createFramebufferInfo(gl, framePointsOptions);
+    const frameFilter = [twgl.createFramebufferInfo(gl, frameOptions),twgl.createFramebufferInfo(gl, frameOptions)];
+    const frames = [ frameFilter ].flat();
     
     // time parameters
     let tick = 0;
@@ -34,11 +35,11 @@ export function viewer (canvas, plyName)
     let parameters = {
         time: 0,
         resolution: [canvas.width, canvas.height],
-        framebuffer: 0,
-        frameDepth: 0,
-        frameAO: 0,
+        framePoints: 0,
+        frameFilter: 0,
         temporal: 0,
         blueNoiseMap: twgl.createTexture(gl, { src: "image/bluenoise_shadertoy.png" } ),
+        matcap: twgl.createTexture(gl, { src: "image/matcap4.png", minMag: gl.LINEAR } ),
     };
     
     // camera
@@ -59,7 +60,9 @@ export function viewer (canvas, plyName)
         free: false,
         mouse: [0, 0],
         clic: false,
+        clicLeft: false,
         wheel: 0,
+        camera: 0,
         perspective: 0,
     };
     
@@ -92,7 +95,8 @@ export function viewer (canvas, plyName)
             if (twgl.resizeCanvasToDisplaySize(gl.canvas)) {
                 parameters.resolution = [gl.canvas.width, gl.canvas.height];
                 frames.forEach(frame => twgl.resizeFramebufferInfo(gl, frame, frameOptions));
-                twgl.resizeFramebufferInfo(gl, frameDepth, frameDepthOptions);
+                twgl.resizeFramebufferInfo(gl, framePoints, framePointsOptions);
+                twgl.resizeFramebufferInfo(gl, frameNormal, framePointsOptions);
                 aspect = gl.canvas.width / gl.canvas.height;
                 projection = m4.perspective(60 * Math.PI / 180, aspect, .01, 100.);
             }
@@ -111,7 +115,7 @@ export function viewer (canvas, plyName)
             mouse_dt.y = mouse.y - mouse_prev.y;
             mouse_prev.x = mouse.x;
             mouse_prev.y = mouse.y;
-            if (settings.clic) {
+            if (settings.clic && settings.clicLeft) {
                 mouse_orbit.x += mouse_dt.x;
                 mouse_orbit.y += mouse_dt.y;
             }
@@ -122,13 +126,15 @@ export function viewer (canvas, plyName)
             }
 
             // camera
+            // let orbit_target = m4.identity();
             orbit = m4.identity();
             orbit = m4.rotateY(orbit, -mouse_orbit.x*1.5);
             orbit = m4.rotateX(orbit, -mouse_orbit.y*1.5);
             orbit = m4.translate(orbit, [0,0,orbit_distance]);
             eye = m4.getTranslation(orbit);
             world = m4.translation([0,-.3,0]);
-            settings.perspective = m4.multiply(m4.multiply(projection, m4.inverse(m4.lookAt(eye, target, up))), world);
+            settings.camera = m4.inverse(m4.lookAt(eye, target, up));
+            settings.perspective = m4.multiply(m4.multiply(projection, (settings.camera)), world);
 
             persistent.mouse_orbit[0] = mouse_orbit.x;
             persistent.mouse_orbit[1] = mouse_orbit.y;
@@ -146,6 +152,7 @@ export function viewer (canvas, plyName)
             }
 
             parameters.perspective = settings.perspective;
+            parameters.camera = settings.camera;
             // console.log(parameters.perspective);
             settings.wheel = 0;
 
@@ -158,10 +165,11 @@ export function viewer (canvas, plyName)
             // } else {
             if (points != null) {
 
-                // draw points depth into frame
                 gl.enable(gl.DEPTH_TEST);
                 gl.depthFunc(gl.LEQUAL);
-                gl.bindFramebuffer(gl.FRAMEBUFFER, frameDepth.framebuffer);
+
+                // draw points depth into frame
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framePoints.framebuffer);
                 gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
                 gl.useProgram(shaderPoints.program);
                 twgl.setUniforms(shaderPoints, parameters);
@@ -171,16 +179,28 @@ export function viewer (canvas, plyName)
                     twgl.drawBufferInfo(gl, p);
                 }
 
-                parameters.frameDepth = frameDepth.attachments[0];
-                parameters.frameAO = framesAO[tick%2].attachments[0];
+                // draw points normal into frame
+                gl.bindFramebuffer(gl.FRAMEBUFFER, frameNormal.framebuffer);
+                gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                gl.useProgram(shaderNormal.program);
+                twgl.setUniforms(shaderNormal, parameters);
+                for (let index = 0; index < points.length; index++) {
+                    const p = points[index];
+                    twgl.setBuffersAndAttributes(gl, shaderNormal, p);
+                    twgl.drawBufferInfo(gl, p);
+                }
+
+                parameters.framePoints = framePoints.attachments[0];
+                parameters.frameFilter = frameFilter[tick%2].attachments[0];
+                parameters.frameNormal = frameNormal.attachments[0];
                 
                 // gl.disable(gl.DEPTH);
                 // ao
-                gl.bindFramebuffer(gl.FRAMEBUFFER, framesAO[(tick+1)%2].framebuffer);
+                gl.bindFramebuffer(gl.FRAMEBUFFER, frameFilter[(tick+1)%2].framebuffer);
                 // gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-                gl.useProgram(shaderAO.program);
-                twgl.setUniforms(shaderAO, parameters);
-                twgl.setBuffersAndAttributes(gl, shaderAO, plane);
+                gl.useProgram(shaderFilter.program);
+                twgl.setUniforms(shaderFilter, parameters);
+                twgl.setBuffersAndAttributes(gl, shaderFilter, plane);
                 twgl.drawBufferInfo(gl, plane);
                 
                 // draw final image

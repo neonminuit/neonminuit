@@ -31,7 +31,7 @@ export function particles (attributes, subdivisions) {
 					attributeNames.forEach(name => {
 						var array = attributes[name];
 						for (var i = 0; i < 3; i++) {
-							arrays[name].data.push(array[m * verticesMax * 3 + index*3+i]);
+							arrays[name].data.push(array[m*verticesMax*3 + index*3+i]);
 						}
 					});
 					var anchorX = x / subdivisions[0];

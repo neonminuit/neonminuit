@@ -6,7 +6,6 @@ export let persistent = {
 
 Object.keys(persistent).forEach((key) => {
     const item = localStorage.getItem(key)
-    console.log(item);
     if (item !== undefined && item !== null) {
         if (item == 'true') {
             value = true;

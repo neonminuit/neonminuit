@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Hello, world!</h1>
+        
+        <div class="grid">
+            <div><canvas>
+                vec4 camera = vec4(0,0,-2, 1);
+                const float iterations = 20.;
+                float map(vec3 p) {
+                    float dist = 100.;
+                    vec3 pp = p;
+                    float an = 196. + rng.x*.1 + time * .1;
+                    float a = 1.;
+                    for (float i = 0.; i < 5.; ++i) {
+                        p.xz *= rot(an/a);
+                        p.yz *= rot(an/a);
+                        p.yx *= rot(an/a);
+                        p.xz = abs(p.xz)-.8*a;
+                        dist = min(dist, length(p)-.2*a);
+                        a /= 1.7;
+                    }
+                    dist = max(dist, -(length(pp-camera.xyz)-1.));
+                    return dist;
+                }
+            </canvas></div>
+        </div>
+        
+        <div class="grid">
+            <div><canvas>
+                // shell
+                #define FRAME_MIX
+                vec4 camera = vec4(0,0,-1, 1);
+                const float iterations = 20.;
+                float map(vec3 p) {
+                    float dist = 100.;
+                    vec3 pp = p;
+                    float an = 196. + time * .1;
+                    an -= length(p);
+                    float a = 1.;
+                    for (float i = 0.; i < 4.; ++i) {
+                        p.xz *= rot(an/a);
+                        p.yz *= rot(an/a);
+                        p.yx *= rot(an/a);
+                        p = abs(p)-.2*a;
+                        dist = min(dist, length(p)-.3*a);
+                        a /= 1.3;
+                    }
+                    dist = abs(dist) - .01;
+                    dist = max(dist, -(length(pp-camera.xyz)-.9));
+                    return dist;
+                }
+            </canvas></div>
+        </div>
+            
+        <div class="grid">
+            <div><canvas>
+                // corail
+                vec4 camera = vec4(0,0,-.8, 1.5);
+                const float iterations = 40.;
+                float map(vec3 p) {
+                    float dist = 100.;
+                    vec3 pp = p;
+                    float an = 16. + time * .1;
+                    an -= length(p)*1.;
+                    float a = 1.;
+                    for (float i = 0.; i < 6.; ++i) {
+                        p.yz *= rot(an/a);
+                        p.xz *= rot(an/a);
+                        p.yx *= rot(an/a);
+                        p.xz = abs(p.xz)-.2*a;
+                        dist = smin(dist, length(p)-.1*a, .1*a);
+                        a /= 1.5;
+                    }
+                    dist = abs(dist) - .001;
+                    dist = max(dist, -(length(pp-camera.xyz)-.8));
+                    return dist;
+                }
+            </canvas></div>
+        </div>
+            
+        <div class="grid">
+            <div><canvas>
+                // explosion
+                #define FRAME_MIX
+                vec4 camera = vec4(0,0,-2., 3.5);
+                const float iterations = 40.;
+                float map(vec3 p) {
+                    float dist = 100.;
+                    vec3 pp = p;
+                    float lp = length(p);
+                    float loop = fract(time/5.)*6.28;
+                    float r = .3+.1*sin(lp*10.+p.z*20.+loop);
+                    float an = 16.;// + time * .01;
+                    float a = 1.;
+                    for (float i = 0.; i < 4.; ++i) {
+                        p.yz *= rot(an/a);
+                        p.xz *= rot(an/a);
+                        p.yx *= rot(an/a);
+                        p = abs(p)-r*a;
+                        dist = smin(dist, length(p)-.05*a, .5*a);
+                        a /= 2.5;
+                    }
+                    dist = max(dist, -(length(pp-camera.xyz)-1.5));
+                    return dist;
+                }
+            </canvas></div>
+        </div>
+        
+        <script src="twgl-full.min.js"></script>
+        <script src="softracer.js"></script>
+    </main>
+    <footer>
+        <h1>yes</h1>
+    </footer>
+</body>
+</html>

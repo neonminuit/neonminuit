@@ -20,6 +20,7 @@ canvas.addEventListener("touchmove", event => {
 
 canvas.addEventListener("mousedown", event => {
     app.clic = true;
+    app.clicLeft = event.button == 0;
 });
 
 canvas.addEventListener("contextmenu", event => {
