@@ -109,8 +109,8 @@ void main() {
     float td = fract(time/delay);
     float fade = smoothstep(1.,.95,td);
     color = vec4(0,0,0,1);
-    rng = texture(blueNoiseMap, uv*.5+.5+hash21(time)*step(.99, fade)).rgb;
-    // rng = hash32(gl_FragCoord.xy);
+    // rng = texture(blueNoiseMap, uv*.5+.5+hash21(time)*step(.99, fade)).rgb;
+    rng = hash33(vec3(gl_FragCoord.xy, time*60.));
     mat = -1.;
     
     vec2 uu = uv;
