@@ -12,7 +12,7 @@ out vec2 uv;
 
 void main() {
     gl_Position = vec4(texcoord * 2. - 1., 0, 1);
-    uv = gl_Position.xy * vec2(resolution.x/resolution.y,1.);
+    uv = texcoord;//gl_Position.xy * vec2(resolution.x/resolution.y,1.);
 }
 
 `+"";
@@ -21,16 +21,11 @@ export const image = "#version 300 es"+glsl`
 
 precision mediump float;
 uniform sampler2D framebuffer;
-uniform float tick;
 in vec2 uv;
 layout(location = 0) out vec4 color;
 
 void main() {
-    // if (tick > 3.) {
-        color = texture(framebuffer, uv*.5+.5);
-    // } else {
-    //     color = vec4(uv, 0.5, 1.);
-    // }
+    color = texture(framebuffer, uv);
 }
 
 `+"";
@@ -70,7 +65,7 @@ float map (vec3 p) {
     float shape = 100.;
     float t = 1.0+floor(time/delay);
     float r = 1.5;
-    float f = 2.1;
+    float f = 2.;
     float s = 0.8;
     float a = 1.0;
     const float count = 5.;
@@ -83,13 +78,13 @@ float map (vec3 p) {
         dist = min(dist, shape);
         a /= f;
     }
-    // p.x += abs(mod(p.z*10.+1.,2.)-1.)*.01/abs(p.z);
+    // p.x += abs(mod(p.z*20.+1.,2.)-1.)*.01/abs(p.z);
     // p.y += abs(mod(p.z*10.+1.,2.)-1.)*.01/abs(p.z);
     // p.z += abs(mod(p.x*10.+1.,2.)-1.)*.01/abs(p.x);
     // p.x += sin(p.z*100.)*.001/abs(p.z);
-    shape = length(p.xy)-.001;//*rng.x;
-    shape = min(shape, length(p.xz)-.001);//*rng.x;
-    shape = min(shape, length(p.yz)-.001);//*rng.x;
+    shape = length(p.xy)-.001;//.0001/max(.001,abs(p.z));//*rng.x;
+    // shape = min(shape, length(p.xz)-.001);//*rng.x;
+    // shape = min(shape, length(p.yz)-.001);//*rng.x;
     mat = shape < dist ? -1. : mat;
     dist = min(dist, shape);
     return dist;
@@ -110,10 +105,10 @@ void main() {
     float fade = smoothstep(1.,.95,td);
     color = vec4(0,0,0,1);
     // rng = texture(blueNoiseMap, uv*.5+.5+hash21(time)*step(.99, fade)).rgb;
-    rng = hash33(vec3(gl_FragCoord.xy, time*60.));
+    rng = hash33(vec3(gl_FragCoord.xy, time*step(.99, fade)));
     mat = -1.;
     
-    vec2 uu = uv;
+    vec2 uu = (uv*2.-1.)*vec2(resolution.x/resolution.y, 1.);
     uu += (rng.xy*2.-1.)/resolution.xy;
     vec3 pos = vec3(0,0,-3);
     vec3 ray = normalize(vec3(uu, 1));
@@ -154,7 +149,7 @@ void main() {
     // color = mix(color, texture(framebuffer, gl_FragCoord.xy/resolution.xy), 0.97);
     // if (tick > 3.) {
         color = clamp(color, 0., 1.);
-        color = max(color, texture(framebuffer, gl_FragCoord.xy/resolution.xy));
+        color = max(color, texture(framebuffer, uv));
     // }
     color.rgb *= fade;
 }

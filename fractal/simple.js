@@ -17,7 +17,7 @@ export function simple (canvas)
     const uniforms = {
         time: 0,
         resolution: [canvas.width, canvas.height],
-        blueNoiseMap: twgl.createTexture(gl, { src: "shader/bluenoise_shadertoy.png", wrap: gl.REPEAT, minMag: gl.NEAREST } ),
+        // blueNoiseMap: twgl.createTexture(gl, { src: "shader/bluenoise_shadertoy.png", wrap: gl.REPEAT, minMag: gl.NEAREST } ),
     };
 
     let tick = 0;
