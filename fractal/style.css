@@ -1,0 +1,21 @@
+:root {
+  --spacing: 0rem;
+}
+
+* {
+  transition: 0.5s opacity ease-in-out;
+}
+
+canvas {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
