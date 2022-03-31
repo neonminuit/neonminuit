@@ -1,21 +1,55 @@
-:root {
-  --spacing: 0rem;
+* {
+  /* transition: 0.1s bottom; */
 }
 
-* {
-  transition: 0.5s opacity ease-in-out;
+html {
+  transform: rotate(270deg);
+  transform-origin: left top;
+  width: 100vh;
+  height: 100vw;
+  overflow-x: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
 }
 
 canvas {
   width: 100%;
   aspect-ratio: 4 / 3;
+  /* cursor: none; */
 }
 
 .fullscreen {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vh;
+  height: 100vw;
   z-index: -1;
+}
+
+#overlay {
+  z-index: 1;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  background-color: black;
+  padding: 3px;
+}
+
+#logo {
+  width: 30vh;
+  position: fixed;
+  right: 2vw;
+  bottom: 2vw;
+  z-index: 2;
+}
+
+#editor {
+  position: absolute;
+  width: 100vh;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
