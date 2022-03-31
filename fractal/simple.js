@@ -17,10 +17,10 @@ export function simple (canvas)
     const lines = fractal.split('\n');
     const fullText = fractal.split('\n').join(' ');
     const shaders = [
+        twgl.createProgramInfo(gl, [ fullscreen, fractal ]),
+        twgl.createProgramInfo(gl, [ fullscreen, fractal2 ]),
+        twgl.createProgramInfo(gl, [ fullscreen, fractal3 ]),
         twgl.createProgramInfo(gl, [ fullscreen, fractal4 ]),
-        // twgl.createProgramInfo(gl, [ fullscreen, fractal ]),
-        // twgl.createProgramInfo(gl, [ fullscreen, fractal2 ]),
-        // twgl.createProgramInfo(gl, [ fullscreen, fractal3 ]),
     ]
     let currentShader = 0;
     let tick = 0;
