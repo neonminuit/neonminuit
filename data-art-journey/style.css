@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 1s;
+  color: white;
+  font-family: "kolikoRegular", sans-serif;
+}
+
+.fullscreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+#container {
+  display: table;
+}
+
+#color-picker {
+  font-size: 66px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+
+.center {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+.title {
+  font-size: 96px;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  line-height: 80px;
+  font-size: 46px;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  font-size: 36px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+#button-ok {
+  font-size: 30px;
+  position: absolute;
+  background-color: #37a031;
+  border-radius: 10px;
+  bottom: 50px;
+  right: 50px;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fadeOut {
+  opacity: 0%;
+}
+
+.fadeIn {
+  opacity: 100%;
+}
