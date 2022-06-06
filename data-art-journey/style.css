@@ -85,7 +85,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  background: url("/asset/loader.gif") no-repeat center black;
+  background: url("./asset/loader.gif") no-repeat center black;
   background-size: 20px;
 }
 
@@ -182,7 +182,7 @@ body {
   border-radius: 10px;
   padding-top: 5px;
   font-size: 30px;
-  background-image: url("/asset/rainbow.png");
+  background-image: url("./asset/rainbow.png");
   cursor: pointer;
   z-index: 10;
 }
