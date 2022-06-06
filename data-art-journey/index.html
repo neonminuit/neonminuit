@@ -1,46 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Data Art Journey</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font/koliko-Regular.css">
-    <link rel="stylesheet" href="font/alarm-clock.css">
-    <script src="script/twgl.js"></script>
-    <script src="script/load.js"></script>
-    <script src="shader/common.js"></script>
-    <script src="shader/shader.js"></script>
-    <script src="shader/metaball.js"></script>
-    <script src="shader/gradient.js"></script>
-    <script src="script/cursor.js"></script>
-    <script src="script/date.js"></script>
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font/fonts.css" />
+    <script type="text/javascript" src="script/gif/gif.js"></script>
+    <script type="module" src="script/main.js"></script>
+  </head>
 
-<body>
+  <body class="unselectable">
     <div id="container">
-        <div id="content" class="center unselectable">
-            <span class="title">
-                Welcome to<br />
-                DATA ART JOURNEY
-            </span>
-            <br/>
-            <span class="subtitle">
-                A digital art project that need your data.
-            </span>
-            <br />
-            <span class="text">
-                Follow the steps and be part of the film<br/>
-                to present in October 2023.
-            </span>
-        </div>
-        <p id="color-picker" class="unselectable"></p>
+      <div id="content">
+        <span class="subtitle"> Bienvenue dans </span>
+        <br />
+        <span class="title"> DATA ART JOURNEY </span>
+        <br />
+        <span class="subtitle">
+          Un projet d'art numérique<br />
+          qui à besoin de vos données.
+        </span>
+        <br />
+        <br />
+        <span class="text">
+          Suivez les étapes et prenez part<br />
+          au film présenté en octobre 2023.
+        </span>
+      </div>
+      <p id="color-picker"></p>
     </div>
-    <button id="button-ok">OK</button>
+    <div id="container-end">
+      <div id="content-end">
+        <span id="data-end" class="text"
+          >DATA 1 : #00FF00<br />
+          DATA 2 : 1455005001042022<br />
+          DATA 3 : 011011010110100101101110011101010110100101110100</span
+        >
+        <br />
+        <br />
+        <button id="button-data">ENVOYER LES DATA</button>
+        <br />
+        <br />
+        <span class="text">
+          Vous êtes invité à découvrir le résultat de cette<br />
+          expérience numérique lors de la projection du film qui<br />
+          aura lieu en octobre 2022 pour l’ouverture du nouveau<br />
+          site Sanofi avenue de la grande armée à Paris.
+        </span>
+      </div>
+    </div>
+    <div id="info">DATA ART JOURNEY</div>
+    <div id="data"></div>
+    <input
+      type="text"
+      id="input-text"
+      placeholder="Name..."
+      value="Name"
+      maxlength="15"
+    />
+    <button id="button-back" class="button"><</button>
+    <button id="button-ok" class="button">OK</button>
+    <button id="button-gif" class="button">TELECHARGER LE GIF</button>
     <canvas id="shader" class="fullscreen"></canvas>
-    <script src="script/webgl.js"></script>
-    <script src="script/main.js"></script>
-</body>
-
+    <div id="events"></div>
+    <div id="fade"></div>
+  </body>
 </html>

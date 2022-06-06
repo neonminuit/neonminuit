@@ -1,303 +1,284 @@
 
+import { dom } from './engine/dom.js'
+import { input } from './engine/input.js'
+import { webgl } from './engine/webgl.js'
+import { time } from "./engine/time.js";
+import { uniforms } from "./engine/uniforms.js";
+import { clamp01, easeInOutSine, HSVtoRGB } from './engine/utils.js'
 
-// DOMs elements
-const container = document.getElementById("container");
-const content = document.getElementById("content");
-const colorPicker = document.getElementById("color-picker");
-const buttonOK = document.getElementById("button-ok");
+import { state } from './engine/state.js';
+import { user } from './engine/user.js';
+import { metaball } from "./module/metaball.js";
+import { colorPicker } from "./module/colorPicker.js";
+import { cursor } from "./module/cursor.js";
+import { timeDate } from "./module/timeDate.js";
+import { particles } from "./module/particles.js";
+import { name } from './module/name.js';
 
-// timing
-let elapsed = 0;
-let deltaTime = 0;
-let transition = 0;
+let width = window.innerWidth;
+let height = window.innerHeight;
 
-// input events
-let clic = false;
-let mouse = [0, 0];
-let mouseLast = [0, 0];
-let mouseVelocityRaw = [0, 0];
-let mouseVelocity = [0, 0];
-let mouseTarget = [0, 0];
-let mouseSmooth = [0, 0];
-const smooth = 2;
-container.addEventListener("mousemove", function(e)
+window.onload = function()
 {
-    mouse = [e.clientX, e.clientY];
-});
-container.addEventListener("mousedown", function(e)
-{
-    mouse = [e.clientX, e.clientY];
-    mouseLast = [e.clientX, e.clientY];
-    mouseVelocity = [0,0];
-    mouseVelocityRaw = [0,0];
-    clic = true;
-});
-container.addEventListener("mouseup", function(e)
-{
-    clic = false;
-});
+    input.hook(dom.events);
+    state.set(state.METABALLS);
 
+    dom.buttonOK.addEventListener('mousedown', function(){
+        if (!state.isInTransition() && dom.buttonOK.style.opacity != 0) state.next();
+    });
+    dom.buttonBack.addEventListener('mousedown', function(){
+        if (!state.isInTransition() && dom.buttonBack.style.opacity != 0) state.previous();
+    });
+    dom.buttonData.addEventListener('mousedown', function(){
+        if (!state.isInTransition()) state.next();
+        // data upload
+        // user.getColor();
+        // user.getTimeDate();
+        // user.getName();
+    });
 
-// states
-const METABALLS = 0;
-const COLOR_PICKER = 1;
-const TIME_DATE = 2;
-const NAME = 3;
-let state = METABALLS;
-
-setMetaballs();
-// setColorPicker();
-// setTimeDate();
-
-function update(time)
-{
-    deltaTime = time / 1000 - elapsed;
-    requestAnimationFrame(update);
-
-    transition = clamp01(transition + deltaTime);
-    uniforms.transition = easeInOutSine(transition, 0, 1, 1);
-
-    
-    switch (state)
-    {
-        case METABALLS:
-            updateMetaballs();
-            break;
-        case COLOR_PICKER:
-            updateColorPicker();
-            break;
-        case TIME_DATE:
-            updateTimeDate();
-            break;
-        case NAME:
-            updateTimeDate();
-            break;
-    }
-
-    render(time);
-    elapsed = time / 1000;
-}
-
-requestAnimationFrame(update);
-
-// part 1 with metaballs and text introductions
-function setMetaballs()
-{
-    state = METABALLS;
-
-    transition = 0;
-    uniforms.fade = 1;
-    
-    const part1Texts = [
-
-    // `Welcome to<br/>
-    // DATA ART JOURNEY`,
-
-    // `A digital art project
-    // that need your data`,
-
-    // `Follow the steps and be part of
-    // the film to present in October
-    // 2023`,
-    ];
-
-    colorPicker.style.visibility = 'hidden';
-    buttonOK.style.visibility = 'visible';
-    buttonOK.style.opacity = '100%';
-
-    let current = 0;
-    let isTransition = false;
-    // content.innerHTML = part1Texts[current];
-    function part1Clic()
-    {
-        // if (!isTransition)
-        // {
-            // isTransition = true;
-            content.style.opacity = '0%';
-            buttonOK.style.opacity = '0%';
-            // if (current+1 >= part1Texts.length)
-            // {
-                transition = 0;
-                uniforms.fade = 0;
-            // }
-            buttonOK.removeEventListener("mousedown", part1Clic);
+    let rendering = false;
+    const frameRate = 16;
+    const duration = 2;
+    var gif = new GIF({
+        workers: 2,
+        quality: 10
+    });
+    gif.on('finished', function(blob) {
+        window.open(URL.createObjectURL(blob));
+    });
+    dom.buttonGif.addEventListener('mousedown', function(){
+        dom.hide(dom.buttonGif);
+        if (!rendering) {
+            rendering = true;
+            let capture = () => {
+                gif.addFrame(dom.canvas, {delay: 1000/frameRate});
+            };
+            setInterval(capture, 1000/frameRate);
             setTimeout(() => {
-                setColorPicker();
-                // if (current+1 < part1Texts.length)
-                // {
-                //     current = current + 1;
-                //     content.classList.remove('fadeOut');
-                //     content.innerHTML = part1Texts[current];
-                //     isTransition = false;
-                // }
-                // else
-                // {
-                // }
-            }, 1000);
-        // }
-    }
-    buttonOK.addEventListener("mousedown", part1Clic);
-}
-
-function setColorPicker()
-{
-    state = COLOR_PICKER;
-
-    mouseSmooth = [window.innerWidth/2, window.innerHeight*2];
-    mouseTarget = [window.innerWidth/2, window.innerHeight/2];
-    const colorHex = cursor.HSVtoRGB((1-uniforms.cursor[0] - .2 + 1) % 1, 1, 1);
-    colorPicker.style.color = colorHex;
-    colorPicker.textContent = colorHex;
-
-    transition = 0;
-    uniforms.fade = 1;
-
-    content.style.visibility = 'hidden';
-    colorPicker.style.visibility = 'visible';
-    buttonOK.style.visibility = 'visible';
-    buttonOK.style.opacity = '100%';
-
-    var next = function() {
-        transition = 0;
-        uniforms.fade = 0;
-        buttonOK.style.opacity = '0%';
-        colorPicker.style.opacity = '0%';
-        setTimeout(() => {
-            setTimeDate();
-        }, 1000);
-        buttonOK.removeEventListener('mousedown', next);
-    }
-
-    buttonOK.addEventListener('mousedown', next);
-}
-
-function setTimeDate()
-{
-    state = TIME_DATE;
-    
-    transition = 0;
-    uniforms.fade = 1;
-    
-    mouse = [window.innerWidth/2, window.innerHeight/2];
-    mouseSmooth = [window.innerWidth/2, window.innerHeight/2];
-    mouseTarget = [window.innerWidth/2, window.innerHeight/2];
-    uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
-    
-    content.style.visibility = 'hidden';
-    colorPicker.style.visibility = 'hidden';
-    buttonOK.style.visibility = 'visible';
-    buttonOK.style.opacity = '0%';
-    
-    var next = function() {
-        if (timeDate.pause)
-        {
-            transition = 0;
-            uniforms.fade = 0;
-            buttonOK.style.opacity = '0%';
-            colorPicker.style.opacity = '0%';
-            setTimeout(() => {
-                setName();
-            }, 1000);
-            buttonOK.removeEventListener('mousedown', next);
-            container.removeEventListener('mousedown', interact);
+                clearInterval(capture);
+                gif.render();
+            }, duration * 1000);
         }
-    }
+    });
 
-    var interact = function()
-    {
-        timeDate.pause = !timeDate.pause;
-        buttonOK.style.opacity = timeDate.pause ? '100%' : '0%';
-    }
-
-    container.addEventListener('mousedown', interact);
-    buttonOK.addEventListener('mousedown', next);
-}
-
-function setName()
-{
-    state = NAME;
-
-    transition = 0;
-    uniforms.fade = 1;
+    dom.buttonGif.style.display = 'none';
+    setTimeout(() => {
+        dom.fade.style.opacity = 0;
+        setTimeout(() => {
+            dom.fade.style.visibility = 'hidden';
+        }, 1000);
+    }, 1000);
     
-    content.style.visibility = 'hidden';
-    colorPicker.style.visibility = 'hidden';
-    buttonOK.style.visibility = 'visible';
-    buttonOK.style.opacity = '100%';
+    requestAnimationFrame(update);
 }
 
-function updateTimeDate()
+function update(timeElapsed)
 {
-    const blend = 3 * deltaTime;
-    mouseTarget = mouse;
-    mouseSmooth = mixArray(mouseSmooth, mouseTarget, blend);
-    mouseVelocity = mixArray(mouseVelocity, mouseVelocityRaw, blend);
-    mouseVelocityRaw = [mouseSmooth[0]-mouseLast[0], mouseSmooth[1]-mouseLast[1]];
-    mouseLast = [mouseSmooth[0], mouseSmooth[1]];
-
-    uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
-}
-
-function updateMetaballs()
-{
-    const blend = 5 * deltaTime;
-    mouseTarget = mouse;
-    mouseSmooth = mixArray(mouseSmooth, mouseTarget, blend);
-    mouseVelocity = mixArray(mouseVelocity, mouseVelocityRaw, blend);
-    mouseVelocityRaw = [mouseSmooth[0]-mouseLast[0], mouseSmooth[1]-mouseLast[1]];
-    mouseLast = [mouseSmooth[0], mouseSmooth[1]];
-
-    uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
-}
-
-function updateName()
-{
-    const blend = 5 * deltaTime;
-    mouseTarget = mouse;
-    mouseSmooth = mixArray(mouseSmooth, mouseTarget, blend);
-    mouseVelocity = mixArray(mouseVelocity, mouseVelocityRaw, blend);
-    mouseVelocityRaw = [mouseSmooth[0]-mouseLast[0], mouseSmooth[1]-mouseLast[1]];
-    mouseLast = [mouseSmooth[0], mouseSmooth[1]];
-
-    uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
-}
-
-function updateColorPicker()
-{
-    const blend = 5 * deltaTime;
-    mouseSmooth = mixArray(mouseSmooth, mouseTarget, blend);
-    mouseVelocity = mixArray(mouseVelocity, mouseVelocityRaw, deltaTime);
-    mouseVelocityRaw = [mouseSmooth[0]-mouseLast[0], mouseSmooth[1]-mouseLast[1]];
-    mouseLast = [mouseSmooth[0], mouseSmooth[1]];
-
-    uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
+    requestAnimationFrame(update);
     
-    colorPicker.style.top = (mouseSmooth[1] - 100) + "px";
-    colorPicker.style.left = (mouseSmooth[0] + 20) + "px";
-    const colorHex = cursor.HSVtoRGB((1-uniforms.cursor[0] - .2 + 1) % 1, 1, 1);
-    colorPicker.style.color = 'white';//colorHex;
-    colorPicker.style.textShadow = '0px 0px 20px white';//+colorHex;
-    colorPicker.textContent = colorHex;
+    width = window.innerWidth;
+    height = window.innerHeight;
 
-    if (clic)
+    time.update(timeElapsed);
+    state.update();
+    
+    let mouseSmooth;
+
+    // const infoText = 'DATA ART JOURNEY<br/><b>LA COULEUR</b><br/><br/>';
+    dom.data.innerHTML = user.getHTML();
+
+    switch (state.get())
     {
-        mouseTarget = mouse;
+        case state.METABALLS:
+            webgl.clear();
+            webgl.draw(metaball);
+            input.update();
+            break;
+
+        case state.COLOR_PICKER:
+
+            webgl.clear();
+            webgl.draw(colorPicker);
+            webgl.draw(cursor);
+            input.updateDrag();
+            mouseSmooth = input.getMouseSmooth();
+            uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
+            
+            // color hex
+            const colorHex = HSVtoRGB((1-uniforms.cursor[0] - .2 + 1) % 1, 1, 1);
+            dom.colorPicker.style.top = (mouseSmooth[1] - 100) + "px";
+            dom.colorPicker.style.left = (mouseSmooth[0] + 20) + "px";
+            dom.colorPicker.style.color = 'white';
+            dom.colorPicker.style.textShadow = '-10px 10px 20px black';
+            dom.colorPicker.textContent = colorHex;
+            user.setColor(colorHex);
+            user.setColorCursor(mouseSmooth);
+            break;
+            
+        case state.TIME_DATE:
+
+            webgl.clear();
+            webgl.draw(timeDate);
+            input.update();
+            timeDate.update();
+            mouseSmooth = input.getMouseSmooth();
+            uniforms.cursor = [mouseSmooth[0]/width, 1.-mouseSmooth[1]/height];
+
+            // freeze time
+            if (input.getPressed()) {
+                timeDate.toggle();
+                if (timeDate.getPause()) dom.show(dom.buttonOK);
+                else dom.hide(dom.buttonOK);
+            }
+
+            user.setTimeDate(timeDate.getTime());
+            break;
+
+        case state.NAME:
+
+            webgl.clear();
+            webgl.draw(name);
+            input.update();
+            user.setName(name.getBinary());
+
+            // validate button
+            if (!state.isInTransition()) {
+                if (dom.inputText.value != '' && !dom.isVisible(dom.buttonOK))
+                    dom.show(dom.buttonOK);
+                else if (dom.inputText.value == '' && dom.isVisible(dom.buttonOK))
+                    dom.hide(dom.buttonOK)
+            }
+            break;
+
+        case state.PARTICLES:
+            webgl.draw(particles);
+            input.update();
+            break;
+
+        case state.GIF:
+            webgl.clear();
+            // webgl.crop(0,height/4,width,height/2);
+            webgl.draw(name);
+            input.update();
+            break;
     }
-    else
+    
+    webgl.update(state.get());
+}
+
+export function initState(newState)
+{
+    dom.hide(dom.inputText);
+    dom.hide(dom.buttonBack);
+    dom.hide(dom.buttonOK);
+    dom.hide(dom.colorPicker);
+    dom.hide(dom.content);
+    dom.hide(dom.info);
+    dom.hide(dom.data);
+    dom.hide(dom.containerEnd);
+    dom.hide(dom.buttonGif);
+
+    switch (newState)
     {
-        mouseVelocityRaw = mixArray(mouseVelocityRaw, [0,0], blend);
+        case state.METABALLS:
+
+            dom.show(dom.buttonOK);
+            dom.show(dom.content);
+            dom.show(dom.info);
+            input.setMouse([width/2, height/2]);
+            break;
+
+        case state.COLOR_PICKER:
+
+            dom.show(dom.buttonBack);
+            dom.show(dom.buttonOK);
+            dom.show(dom.colorPicker);
+            dom.show(dom.info);
+            dom.show(dom.data);
+            input.setMouseSmooth(user.getColorCursor());
+            input.setMouseTarget(user.getColorCursor());
+            break;
+
+        case state.TIME_DATE:
+            
+            dom.show(dom.buttonBack);
+            dom.show(dom.info);
+            dom.show(dom.data);
+            if (timeDate.getPause()) dom.show(dom.buttonOK);
+            input.setMouse([width/2, height/2]);
+            input.setMouseSmooth([width/2, height/2]);
+            input.setMouseTarget([width/2, height/2]);
+            break;
+
+        case state.NAME:
+            
+            dom.show(dom.buttonBack);
+            dom.show(dom.inputText);
+            dom.show(dom.info);
+            dom.show(dom.data);
+            break;
+
+        case state.PARTICLES:
+            particles.reset();
+            break;
+
+        case state.END:
+            dom.data.style.display = 'none';
+            dom.events.style.display = 'none';
+            dom.containerEnd.style.opacity = 1;
+            dom.show(dom.buttonBack);
+            break;
+
+
+        case state.GIF:
+            uniforms.blackOut = 0;
+            name.setAnimation(1);
+            dom.canvas.style.width = '50vw';
+            dom.canvas.style.height = '50vh';
+            dom.canvas.style.left = '25vw';
+            dom.canvas.style.top = '25vh';
+            dom.data.style.display = 'none';
+            dom.events.style.display = 'none';
+            dom.buttonData.style.display = 'none';
+            dom.buttonGif.style.display = 'inline-block';
+            dom.show(dom.buttonGif);
+            break;
+    
+        default:
+            break;
     }
 }
 
-function clamp01(t) { return Math.max(0, Math.min(1, t)); }
-function mix (a, b, t) { return a + (b - a) * t };
-function mixArray (a, b, t) { 
-    let array = [];
-    for (let i = 0; i < a.length; i++)
-        array[i] = mix(a[i], b[i], t);
-    return array;
-}
-// https://www.geeksforgeeks.org/fabric-js-easeinoutsine-method/
-function easeInOutSine(t, b, c, d) {
-    return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
+export function exitState(currentState)
+{
+    dom.hide(dom.inputText);
+    dom.hide(dom.buttonBack);
+    dom.hide(dom.buttonOK);
+    dom.hide(dom.colorPicker);
+    dom.hide(dom.content);
+    dom.hide(dom.info);
+    dom.hide(dom.data);
+    dom.hide(dom.containerEnd);
+    dom.hide(dom.buttonGif);
+
+    switch (currentState)
+    {
+        case state.END:
+            dom.data.style.display = 'inline-block';
+            dom.events.style.display = 'inline-block';
+            break;
+
+        case state.GIF:
+            dom.canvas.style.width = '100vw';
+            dom.canvas.style.height = '100vh';
+            dom.canvas.style.left = '0';
+            dom.canvas.style.top = '0';
+            dom.data.style.display = 'inline-block';
+            dom.events.style.display = 'inline-block';
+            break;
+    
+        default:
+            break;
+    }
 }
