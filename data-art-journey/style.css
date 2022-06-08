@@ -92,7 +92,7 @@ body {
 #info {
   font-size: 20px;
   position: fixed;
-  color: #333;
+  color: white;
   top: 50px;
   left: 50px;
   width: 200px;
@@ -100,7 +100,7 @@ body {
 }
 
 #info b {
-  color: #333;
+  color: white;
 }
 
 #data {
