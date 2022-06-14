@@ -48,7 +48,7 @@ export const shaderParticlesPixel = glsl`
         float dist = length(uv);
         if (dist > 1.) discard;
         vec3 normal = normalize(vec3(-uv, 1.-dist*dist));
-        vec3 lightDir = normalize(vec3(0,1,1));
+        vec3 lightDir = normalize(vec3(0,-1,1));
         float shade = dot(normal, lightDir)*0.5+0.5;
         float light = pow(dot(reflect(vec3(0,0,1), normal), lightDir)*0.5+0.5, 4.0);
         vec3 color = tint * shade + light * 0.5;

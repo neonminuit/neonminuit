@@ -5,7 +5,7 @@ function User()
     let timeDate = '...';
     let name = '...';
 
-    let colorCursor = [ window.innerWidth / 2, window.innerHeight / 2];
+    let colorCursor = [ 0.5, 0.5];
 
     this.getColor = () => { return color; }
     this.getTimeDate = () => { return timeDate; }

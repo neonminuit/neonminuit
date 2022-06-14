@@ -63,7 +63,7 @@ function TimeDate ()
 
     this.getTime = function()
     {
-        return ' ' + hours + minutes + seconds + millis + day + month + year;
+        return '' + hours + minutes + seconds + millis + day + month + year;
     } 
     
     this.update = function()
@@ -99,7 +99,7 @@ function TimeDate ()
             let text = ''
             ctx.clearRect(0,0,c.width,c.height);
             
-            text = hours + ':' + minutes + ':' + seconds + ':' + millis;
+            text = hours + '/' + minutes + '/' + seconds + '/' + millis;
             y = c.height/2-25;
             ctx.font = fontSize+'px alarm_clockregular';
             ctx.fillStyle = '#31ED11'

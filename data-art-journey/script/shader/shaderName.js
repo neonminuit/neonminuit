@@ -4,8 +4,9 @@ const glsl = x => x;
 
 export const shaderName = glsl`
 
-    uniform float time, fadeIn, fadeOut, animation, blackOut;
+    uniform float time, fadeIn, fadeOut, animation, blackOut, zoom;
     uniform vec2 resolution;
+    uniform vec2 colorCursorPicked;
     uniform sampler2D image, blueNoise;
     varying vec2 uv;
 
@@ -26,14 +27,15 @@ export const shaderName = glsl`
         uv += (rng.xy * 2. - 1.) * displace * animation;//(1.-fadeOut);
 
         float range = resolution.y/4.;
-        float offset = (1.-uv.x)*6.28;
-        offset += fract(p.x*range) * 2.;
+        float offset = colorCursorPicked.x*6.28+1.5;
+        offset += fract(p.x*range) * .5;
         // offset += displace * 40.;
         vec3 color = 0.5 + 0.5 * cos(vec3(0,.3,.6)*6.28+offset);
 
         uv -= 0.5;
         uv.x *= resolution.x/resolution.y;
         uv.x *= 0.25;
+        uv /= zoom;
         uv += 0.5;
 
         vec4 map = texture2D(image, uv);

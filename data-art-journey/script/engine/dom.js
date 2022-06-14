@@ -13,6 +13,7 @@ export let dom =
     buttonData:     document.getElementById("button-data"),
     buttonGif:      document.getElementById("button-gif"),
     info:           document.getElementById("info"),
+    tips:           document.getElementById("tips"),
     data:           document.getElementById("data"),
     fade:           document.getElementById("fade"),
 

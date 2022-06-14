@@ -5,6 +5,7 @@ import { uniforms } from '../engine/uniforms.js'
 import { shaderName } from '../shader/shaderName.js'
 import { dom } from '../engine/dom.js';
 import { time } from '../engine/time.js';
+import { user } from '../engine/user.js';
 
 const v3 = twgl.v3;
 
@@ -15,7 +16,7 @@ function Name ()
     let canvas;
     let context2d;
 
-    let fontSize = 60;
+    let fontSize = 40;
     let text = '';
     let binText = '';
     let binArray = [];
@@ -26,6 +27,7 @@ function Name ()
 
     this.getBinary = () => { return binArray.join(''); }
     this.setAnimation = (v) => { animation = v; }
+    this.getText = () => { return text; }
 
     this.init = function(gl)
     {
@@ -50,6 +52,8 @@ function Name ()
 
         uniforms.image = twgl.createTexture(gl, { src: canvas, flipY: true, minMag: gl.LINEAR });
 
+        uniforms.zoom = 1;
+
         ready = true;
     }
 
@@ -61,6 +65,9 @@ function Name ()
         let ctx = context2d;
 
         // elapsed += time.getDeltaTime();
+
+        uniforms.colorCursorPicked = user.getColorCursor();
+        // console.log(uniforms.colorCursorPicked);
 
         if (text != dom.inputText.value)// || elapsed > 1)
         {
@@ -76,15 +83,15 @@ function Name ()
             ctx.fillStyle = '#aaa'
             for (let index = 0; index < text.length; index++) {
                 binArray[index] = text.charCodeAt(index).toString(2);
-                const p = this.random21(index*72 + 196*Math.floor(time.getTime()));
-                const a = p[0] * 6.28;
-                const r = p[1] * 60 + 30;
+                // const p = this.random21(index*72 + 196*Math.floor(time.getTime()));
+                // const a = p[0] * 6.28;
+                // const r = p[1] * 60 + 30;
                 // ctx.fillText(binArray[index], x + Math.cos(a) * r * 2, y + Math.sin(a) * r);
                 // ctx.fillText(binArray[index], x + p[0] * 50, y + p[1] * 50);
                 // const i = index * 10;
                 // ctx.fillText(binArray[index], x+i, y+i);
             }
-            ctx.fillText(binArray.join(' '), x, y+30);
+            ctx.fillText(binArray.join(' '), x, y+20);
             
             
             ctx.fillStyle = '#fff'
@@ -101,6 +108,19 @@ function Name ()
         twgl.setBuffersAndAttributes(gl, material, mesh);
         twgl.setUniforms(material, uniforms);
         twgl.drawBufferInfo(gl, mesh);
+    }
+
+    this.getTextWidth = function()
+    {
+
+        return dom.inputText.value.length * fontSize * 2;
+        // context2d.font = fontSize + 'px kolikoRegular';
+        // return context2d.measureText(text).width;
+    }
+
+    this.setZoom = function(zoom)
+    {
+        uniforms.zoom = zoom;
     }
 
     this.random21 = function(p)

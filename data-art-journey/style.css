@@ -92,15 +92,20 @@ body {
 #info {
   font-size: 20px;
   position: fixed;
-  color: #333;
   top: 50px;
   left: 50px;
   width: 200px;
   height: 200px;
 }
 
-#info b {
-  color: #333;
+#tips {
+  font-size: 20px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  width: 400px;
+  height: 200px;
+  text-align: right;
 }
 
 #data {

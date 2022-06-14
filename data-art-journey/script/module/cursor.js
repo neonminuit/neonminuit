@@ -15,7 +15,9 @@ function Cursor ()
     let material;
     let ready = false;
     let loaded = false;
+    let attributes;
     let elapsed = 0;
+    let interacted = false;
 
     // 3d coordinates
     const eye = [0, 0, 5];
@@ -24,25 +26,33 @@ function Cursor ()
     const camera = m4.lookAt(eye, target, up);
     const view = m4.inverse(camera);
 
+    this.getInteracted = () => { return interacted; }
+    this.setInteracted = (i) => { interacted = i; }
+
+    this.load = function()
+    {
+        loadOBJ('asset/cursor.obj', function(data) {
+            attributes = data;
+            loaded = true;
+        })
+    }
+
     this.init = function(gl)
     {
         material = twgl.createProgramInfo(gl, [
             shader.common+shaderCursorVertex,
             shader.common+shaderCursorPixel
         ])
-        loadOBJ('asset/cursor.obj', function(attributes) {
-            mesh = twgl.createBufferInfoFromArrays(gl, attributes);
-            loaded = true;
-        })
+        mesh = twgl.createBufferInfoFromArrays(gl, attributes);
         ready = true;
-    },
+    }
 
     this.draw = function(gl)
     {
-        if (!ready) this.init(gl);
-
         if (loaded)
         {
+            if (!ready) this.init(gl);
+
             const elapsed = time.getTime();
             const width = gl.canvas.width;
             const height = gl.canvas.height;
