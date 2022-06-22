@@ -29,6 +29,7 @@ export const shaderName = glsl`
         float range = resolution.y/4.;
         float offset = colorCursorPicked.x*6.28+1.5;
         offset += fract(p.x*range) * .5;
+        offset += uv.x * 6.283;
         // offset += displace * 40.;
         vec3 color = 0.5 + 0.5 * cos(vec3(0,.3,.6)*6.28+offset);
 
