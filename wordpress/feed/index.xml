@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Neon Minuit</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Tue, 24 Oct 2023 14:58:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.3.2</generator>
+
+<image>
+	<url>./../wp-content/uploads/2023/10/LOGO-MINUIT-HOLO_SITCKERS-150x150.png</url>
+	<title>Neon Minuit</title>
+	<link>./../index.html</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Mapping Inversé</title>
+		<link>./../mapping-inverse/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Sun, 12 Feb 2023 14:54:00 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">./../index.html?p=490</guid>
+
+					<description><![CDATA[digital sculpture]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<div class="wp-block-columns is-layout-flex wp-container-3 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-9-16 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Mapping Inversé" src="https://player.vimeo.com/video/829470173?dnt=1&amp;app_id=122963" width="422" height="750" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<p>Mapping Inversé is part of the &#8220;Image Processor&#8221; series, which aims to deconstruct the materiality of technology by playing on the scale of each component. The sculpture consists of a screen placed behind the transparent resin print of a Quadro 4000 graphics card. The liquid crystals are concealed behind the technological artefact until the screen&#8217;s backlighting comes on, revealing each pixel. Floating to the right of the screen, a computer calculates generative animations in real time. Like architectural mapping, the visuals play with the shapes of the graphics card to create the illusion of a collision.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Miroir Arcade</title>
+		<link>./../miroir-arcade/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Wed, 02 Mar 2022 14:25:00 +0000</pubDate>
+				<category><![CDATA[Interactive]]></category>
+		<guid isPermaLink="false">./../index.html?p=234</guid>
+
+					<description><![CDATA[interactive multiplayer projection]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>Arcade Mirror is an interactive multiplayer projection controlled by a cluster of handcrafted gamepads. The visitor sees their body projected into the digital space through a Kinect camera. Mysterious hanging boxes in space can generate spectacular effects. By sharing the controls, the participants manipulate buttons, potentiometers and switches to discover all the distorting filters.</p>
+
+
+
+<p>Made with <a href="https://playful-machines.com/" data-type="link" data-id="https://playful-machines.com/"><strong>Emilie Breslavetz</strong></a></p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="MIROIR ARCADE &amp; HETEROTOPIA" src="https://player.vimeo.com/video/756321000?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group is-layout-flow wp-container-8 wp-block-group-is-layout-flow">
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" fetchpriority="high" width="683" height="1024" src="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg" alt="" class="wp-image-238" srcset="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/miroir-arcade-2-200x300.jpg 200w, ./../wp-content/uploads/2023/10/miroir-arcade-2-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1366x2048.jpg 1366w, ./../wp-content/uploads/2023/10/miroir-arcade-2.jpg 1667w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/miroir-arcade-4-683x1024.jpg" alt="" class="wp-image-240" srcset="./../wp-content/uploads/2023/10/miroir-arcade-4-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/miroir-arcade-4-200x300.jpg 200w, ./../wp-content/uploads/2023/10/miroir-arcade-4-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-4-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-4-1366x2048.jpg 1366w, ./../wp-content/uploads/2023/10/miroir-arcade-4.jpg 1667w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/miroir-arcade-5-683x1024.jpg" alt="" class="wp-image-237" srcset="./../wp-content/uploads/2023/10/miroir-arcade-5-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/miroir-arcade-5-200x300.jpg 200w, ./../wp-content/uploads/2023/10/miroir-arcade-5-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-5-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-5-1366x2048.jpg 1366w, ./../wp-content/uploads/2023/10/miroir-arcade-5.jpg 1667w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/miroir-arcade-6-1024x683.jpg" alt="" class="wp-image-236" srcset="./../wp-content/uploads/2023/10/miroir-arcade-6-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-6-300x200.jpg 300w, ./../wp-content/uploads/2023/10/miroir-arcade-6-768x512.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-6-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/miroir-arcade-6-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/miroir-arcade-1-1024x683.jpg" alt="" class="wp-image-235" srcset="./../wp-content/uploads/2023/10/miroir-arcade-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/miroir-arcade-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-1-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/miroir-arcade-1.jpg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Calculateur Particulier</title>
+		<link>./../calculateur-particulier/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Tue, 08 Feb 2022 04:57:33 +0000</pubDate>
+				<category><![CDATA[Gallery]]></category>
+		<guid isPermaLink="false">./../index.html?p=28</guid>
+
+					<description><![CDATA[digital sculpture]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-9 wp-block-group-is-layout-constrained">
+<p>Reflecting a computer tower, the screen facade opens like a portal, inviting the viewer to approach the heart of the machine. The screen and the central processing unit become one. It forms a digital sculpture on which content calculated in real time is displayed. Generated by graphic code, the screen projects fractal animations.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Calculateur Particulier" src="https://player.vimeo.com/video/694579050?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group is-vertical is-layout-flex wp-container-12 wp-block-group-is-layout-flex">
+<figure class="wp-block-gallery has-nested-images columns-5 is-cropped wp-block-gallery-10 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/A7306535_DxO-683x1024.jpg" alt="" class="wp-image-32" srcset="./../wp-content/uploads/2023/10/A7306535_DxO-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/A7306535_DxO-200x300.jpg 200w, ./../wp-content/uploads/2023/10/A7306535_DxO-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/A7306535_DxO-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/A7306535_DxO-1365x2048.jpg 1365w, ./../wp-content/uploads/2023/10/A7306535_DxO-scaled.jpg 1707w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/A7306525_DxO-683x1024.jpg" alt="" class="wp-image-31" srcset="./../wp-content/uploads/2023/10/A7306525_DxO-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/A7306525_DxO-200x300.jpg 200w, ./../wp-content/uploads/2023/10/A7306525_DxO-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/A7306525_DxO-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/A7306525_DxO-1365x2048.jpg 1365w, ./../wp-content/uploads/2023/10/A7306525_DxO-scaled.jpg 1707w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/A7306475_DxO-683x1024.jpg" alt="" class="wp-image-35" srcset="./../wp-content/uploads/2023/10/A7306475_DxO-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/A7306475_DxO-200x300.jpg 200w, ./../wp-content/uploads/2023/10/A7306475_DxO-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/A7306475_DxO-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/A7306475_DxO-1365x2048.jpg 1365w, ./../wp-content/uploads/2023/10/A7306475_DxO-scaled.jpg 1707w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/A7306476_DxO-1-683x1024.jpg" alt="" class="wp-image-34" srcset="./../wp-content/uploads/2023/10/A7306476_DxO-1-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/A7306476_DxO-1-200x300.jpg 200w, ./../wp-content/uploads/2023/10/A7306476_DxO-1-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/A7306476_DxO-1-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/A7306476_DxO-1-1365x2048.jpg 1365w, ./../wp-content/uploads/2023/10/A7306476_DxO-1-scaled.jpg 1706w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="534" height="1024" src="./../wp-content/uploads/2023/10/Visual-1-534x1024.jpg" alt="" class="wp-image-33" srcset="./../wp-content/uploads/2023/10/Visual-1-534x1024.jpg 534w, ./../wp-content/uploads/2023/10/Visual-1-156x300.jpg 156w, ./../wp-content/uploads/2023/10/Visual-1-768x1473.jpg 768w, ./../wp-content/uploads/2023/10/Visual-1-801x1536.jpg 801w, ./../wp-content/uploads/2023/10/Visual-1-1068x2048.jpg 1068w, ./../wp-content/uploads/2023/10/Visual-1-scaled.jpg 1335w" sizes="(max-width: 534px) 100vw, 534px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Frequency 2021</title>
+		<link>./../frequency-2021/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Tue, 21 Dec 2021 14:25:00 +0000</pubDate>
+				<category><![CDATA[Event]]></category>
+		<guid isPermaLink="false">./../index.html?p=439</guid>
+
+					<description><![CDATA[live visual]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>Immersive live visuals at Gaîté Lyrique for <a href="https://www.instagram.com/le.frequency/?hl=en">Frequency</a> dance battle festival.</p>
+
+
+
+<p>With <a href="https://www.annabacheva.com/"><strong>Anna Bacheva</strong></a></p>
+</div>
+
+
+
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<figure class="wp-block-gallery alignfull has-nested-images columns-3 is-cropped wp-block-gallery-14 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-1-1024x683.jpg" alt="" class="wp-image-440" srcset="./../wp-content/uploads/2023/10/frequency-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-1-1536x1025.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-1-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-5-1024x683.jpg" alt="" class="wp-image-441" srcset="./../wp-content/uploads/2023/10/frequency-5-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-5-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-5-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-5-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-5-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-7-1024x683.jpg" alt="" class="wp-image-446" srcset="./../wp-content/uploads/2023/10/frequency-7-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-7-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-7-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-7-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-7-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-9-1024x683.jpg" alt="" class="wp-image-448" srcset="./../wp-content/uploads/2023/10/frequency-9-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-9-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-9-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-9-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-9-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-10-1024x683.jpg" alt="" class="wp-image-449" srcset="./../wp-content/uploads/2023/10/frequency-10-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-10-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-10-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-10-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-10-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-11-1024x683.jpg" alt="" class="wp-image-450" srcset="./../wp-content/uploads/2023/10/frequency-11-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-11-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-11-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-11-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-11-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/frequency-12-1024x683.jpg" alt="" class="wp-image-451" srcset="./../wp-content/uploads/2023/10/frequency-12-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-12-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-12-768x512.jpg 768w, ./../wp-content/uploads/2023/10/frequency-12-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-12-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="684" src="./../wp-content/uploads/2023/10/frequency-14-1024x684.jpg" alt="" class="wp-image-453" srcset="./../wp-content/uploads/2023/10/frequency-14-1024x684.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-14-300x200.jpg 300w, ./../wp-content/uploads/2023/10/frequency-14-768x513.jpg 768w, ./../wp-content/uploads/2023/10/frequency-14-1536x1026.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-14-2048x1368.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="732" src="./../wp-content/uploads/2023/10/frequency-16-1024x732.jpg" alt="" class="wp-image-455" srcset="./../wp-content/uploads/2023/10/frequency-16-1024x732.jpg 1024w, ./../wp-content/uploads/2023/10/frequency-16-300x214.jpg 300w, ./../wp-content/uploads/2023/10/frequency-16-768x549.jpg 768w, ./../wp-content/uploads/2023/10/frequency-16-1536x1097.jpg 1536w, ./../wp-content/uploads/2023/10/frequency-16-2048x1463.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Les Espaces Rêvés du Grand Paris</title>
+		<link>./../les-espaces-reves-du-grand-paris/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Fri, 24 Sep 2021 14:27:00 +0000</pubDate>
+				<category><![CDATA[Interactive]]></category>
+		<guid isPermaLink="false">./../index.html?p=245</guid>
+
+					<description><![CDATA[live digital performance]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>&#8220;Les espaces rêvés du Grand Paris&#8221; is a performative short film. It is part of the Hétérotopia series, which explores the spaces that can connect us to our utopias. The idea is to open up the boundary between the work and the viewer by inviting them to enter the screen. To achieve this, Neon Minuit uses the tools of video games to produce an interactive animated image.</p>
+
+
+
+<p>The work pays homage to all the urbanities that make up the Paris metropolis. The aim is to create a shared imaginary of the area by directly using the materials that make it up. The work takes the form of tableaux created using 3D scans and a volumetric camera. Neon Minuit depicts bits of cities, architecture and means of transport. The buildings and bodies scanned are represented as a cloud of coloured dots on the screen. These dots are animated to create effects of movement, paint and texture.</p>
+
+
+
+<p>Performed by <a href="https://www.instagram.com/hflowwww/"><strong>HFLOW</strong></a></p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="HETEROTOPIA - Les espaces rêvés du Grand Paris (Trailer 1 min)" src="https://player.vimeo.com/video/655292749?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<figure class="wp-block-gallery alignfull has-nested-images columns-2 is-cropped wp-block-gallery-18 is-layout-flex wp-block-gallery-is-layout-flex" style="margin-right:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<figure class="wp-block-image size-large has-custom-border is-style-default"><img decoding="async" loading="lazy" width="1024" height="650" src="./../wp-content/uploads/2023/10/heterotopia-cube-1-1024x650.jpg" alt="" class="wp-image-246" style="border-style:none;border-width:0px;border-radius:0px" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-1-1024x650.jpg 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-300x190.jpg 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-768x487.jpg 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-1536x974.jpg 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-2048x1299.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="./../wp-content/uploads/2023/10/heterotopia-cube-1-1024x576.png" alt="" class="wp-image-247" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-1-1024x576.png 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-300x169.png 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-768x432.png 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-1536x864.png 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-1-2048x1152.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/heterotopia-cube-2-1024x683.jpg" alt="" class="wp-image-249" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-2-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-768x512.jpg 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="./../wp-content/uploads/2023/10/heterotopia-cube-2-1024x576.png" alt="" class="wp-image-251" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-2-1024x576.png 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-300x169.png 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-768x432.png 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-1536x864.png 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-2-2048x1152.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/heterotopia-cube-3-1024x683.jpg" alt="" class="wp-image-248" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-3-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-300x200.jpg 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-768x512.jpg 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="./../wp-content/uploads/2023/10/heterotopia-cube-3-1024x576.png" alt="" class="wp-image-250" srcset="./../wp-content/uploads/2023/10/heterotopia-cube-3-1024x576.png 1024w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-300x169.png 300w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-768x432.png 768w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-1536x864.png 1536w, ./../wp-content/uploads/2023/10/heterotopia-cube-3-2048x1152.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>La Nuit des Montagnes</title>
+		<link>./../la-nuit-des-montagnes/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Fri, 10 Sep 2021 05:46:00 +0000</pubDate>
+				<category><![CDATA[Immersive]]></category>
+		<guid isPermaLink="false">./../index.html?p=86</guid>
+
+					<description><![CDATA[projection mapping]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-container-21 wp-block-group-is-layout-constrained">
+<p>Andorra, La Nuit des Montagnes is a film that takes viewers on a dialogue between two characters who imagine and dream themselves in the Andorran landscape.</p>
+
+
+
+<p>Music by <a href="http://www.raphaelfoulon.com/">Raphaël Foulon</a></p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="La Nuit des Montagnes" src="https://player.vimeo.com/video/758644046?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group is-vertical is-layout-flex wp-container-24 wp-block-group-is-layout-flex">
+<figure class="wp-block-gallery has-nested-images columns-2 is-cropped wp-block-gallery-22 is-layout-flex wp-block-gallery-is-layout-flex" style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20);padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/1-1-1024x683.jpg" alt="" class="wp-image-87" srcset="./../wp-content/uploads/2023/10/1-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/1-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/1-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/1-1-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/1-1-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/2-1-1024x683.jpg" alt="" class="wp-image-92" srcset="./../wp-content/uploads/2023/10/2-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/2-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/2-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/2-1-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/2-1-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/3-2-1024x683.jpg" alt="" class="wp-image-88" srcset="./../wp-content/uploads/2023/10/3-2-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/3-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/3-2-768x512.jpg 768w, ./../wp-content/uploads/2023/10/3-2-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/3-2-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/4-2-1024x683.jpg" alt="" class="wp-image-91" srcset="./../wp-content/uploads/2023/10/4-2-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/4-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/4-2-768x512.jpg 768w, ./../wp-content/uploads/2023/10/4-2-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/4-2-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/5-1-1024x683.jpg" alt="" class="wp-image-89" srcset="./../wp-content/uploads/2023/10/5-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/5-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/5-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/5-1-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/5-1-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/6-1024x683.jpg" alt="" class="wp-image-90" srcset="./../wp-content/uploads/2023/10/6-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/6-300x200.jpg 300w, ./../wp-content/uploads/2023/10/6-768x512.jpg 768w, ./../wp-content/uploads/2023/10/6-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/6-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/7-1024x683.jpg" alt="" class="wp-image-93" srcset="./../wp-content/uploads/2023/10/7-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/7-300x200.jpg 300w, ./../wp-content/uploads/2023/10/7-768x512.jpg 768w, ./../wp-content/uploads/2023/10/7-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/7-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/8-1024x683.jpg" alt="" class="wp-image-94" srcset="./../wp-content/uploads/2023/10/8-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/8-300x200.jpg 300w, ./../wp-content/uploads/2023/10/8-768x512.jpg 768w, ./../wp-content/uploads/2023/10/8-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/8-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Atmosphere</title>
+		<link>./../atmosphere/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Sat, 03 Apr 2021 05:26:00 +0000</pubDate>
+				<category><![CDATA[Gallery]]></category>
+		<guid isPermaLink="false">./../index.html?p=54</guid>
+
+					<description><![CDATA[immersive digital experience]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>“Le Rêve” tells the story of the birth of a shared imaginary space by opening the virtual space to the users&#8217; bodies through the encounter between the Kinect camera and the mapping. It is part of the work Heterotopia, which explores the spaces that connect us to our utopias.</p>
+
+
+
+<p>We play the role of a dreamer lying on his bed. Projected on the ceiling, a giant screen becomes the mirror of a nocturnal imagination in which we see our own body floating in space. Floating in a sky of memories, our body travels through pieces of space and objects belonging to Neon Midnight&#8217;s memories.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio" style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Hétérotopia - Le Rêve" src="https://player.vimeo.com/video/601804286?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-26 is-layout-flex wp-block-gallery-is-layout-flex" style="margin-top:var(--wp--preset--spacing--20);margin-right:0;margin-bottom:var(--wp--preset--spacing--20);margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" data-id="56" src="./../wp-content/uploads/2023/10/1.jpg" alt="" class="wp-image-56" srcset="./../wp-content/uploads/2023/10/1.jpg 1000w, ./../wp-content/uploads/2023/10/1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/1-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" data-id="55" src="./../wp-content/uploads/2023/10/2.jpg" alt="" class="wp-image-55" srcset="./../wp-content/uploads/2023/10/2.jpg 683w, ./../wp-content/uploads/2023/10/2-200x300.jpg 200w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" data-id="58" src="./../wp-content/uploads/2023/10/3.jpg" alt="" class="wp-image-58" srcset="./../wp-content/uploads/2023/10/3.jpg 683w, ./../wp-content/uploads/2023/10/3-200x300.jpg 200w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" data-id="57" src="./../wp-content/uploads/2023/10/4.jpg" alt="" class="wp-image-57" srcset="./../wp-content/uploads/2023/10/4.jpg 683w, ./../wp-content/uploads/2023/10/4-200x300.jpg 200w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" data-id="59" src="./../wp-content/uploads/2023/10/5.jpg" alt="" class="wp-image-59" srcset="./../wp-content/uploads/2023/10/5.jpg 683w, ./../wp-content/uploads/2023/10/5-200x300.jpg 200w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+</figure>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Heterotopia Miroirs et Perspectives</title>
+		<link>./../heterotopia-miroirs-et-perspectives/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Wed, 20 Jan 2021 14:31:00 +0000</pubDate>
+				<category><![CDATA[Interactive]]></category>
+		<guid isPermaLink="false">./../index.html?p=253</guid>
+
+					<description><![CDATA[Kinectic VR experience]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>Heterotopia is a multiplayer, participatory virtual reality experience that immerses your body in a field of point clouds. The user is equipped with a VR headset and explores within a designated physical area where viewers can enter and create interactions within the VR space. A Kinect is placed above the play area and records people, elements and the environment. Finally, a video projector projects the virtual space into the real world on a screen visible to the audience.</p>
+
+
+
+<div class="wp-block-group is-vertical is-layout-flex wp-container-29 wp-block-group-is-layout-flex">
+<p class="is-layout-flow wp-block-paragraph-is-layout-flow">Production: <strong>Rémi Large </strong>(<a href="https://tamanoir.studio/" data-type="link" data-id="https://tamanoir.studio/">Tamanoir Studio</a>)</p>
+
+
+
+<p>Scenario: <strong>Samuel Lepoil </strong>(<a href="https://tamanoir.studio/" data-type="link" data-id="https://tamanoir.studio/">Tamanoir Studio</a>)</p>
+
+
+
+<p>Audio: <strong>Antoine Wert </strong>et <strong>Alexandre Bobe</strong></p>
+
+
+
+<p>Voice: <strong>Claire Saumande</strong></p>
+</div>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Heterotopia - Miroirs et Perspectives" src="https://player.vimeo.com/video/463042696?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-3 is-cropped wp-block-gallery-31 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" data-id="256" src="./../wp-content/uploads/2023/10/6-1.jpg" alt="" class="wp-image-256" srcset="./../wp-content/uploads/2023/10/6-1.jpg 1000w, ./../wp-content/uploads/2023/10/6-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/6-1-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" data-id="257" src="./../wp-content/uploads/2023/10/2-2.jpg" alt="" class="wp-image-257" srcset="./../wp-content/uploads/2023/10/2-2.jpg 1000w, ./../wp-content/uploads/2023/10/2-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/2-2-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" data-id="258" src="./../wp-content/uploads/2023/10/4-3.jpg" alt="" class="wp-image-258" srcset="./../wp-content/uploads/2023/10/4-3.jpg 1000w, ./../wp-content/uploads/2023/10/4-3-300x200.jpg 300w, ./../wp-content/uploads/2023/10/4-3-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" data-id="259" src="./../wp-content/uploads/2023/10/8-1.jpg" alt="" class="wp-image-259" srcset="./../wp-content/uploads/2023/10/8-1.jpg 1000w, ./../wp-content/uploads/2023/10/8-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/8-1-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" data-id="260" src="./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6-1024x683.jpg" alt="" class="wp-image-260" srcset="./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6-300x200.jpg 300w, ./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6-768x512.jpg 768w, ./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/36degres_expo_au-dela-des-pixels_credit_Quentin_Chevrier-6.jpg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Frequency 2020</title>
+		<link>./../frequency-2020/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Wed, 09 Sep 2020 14:31:00 +0000</pubDate>
+				<category><![CDATA[Event]]></category>
+		<guid isPermaLink="false">./../index.html?p=457</guid>
+
+					<description><![CDATA[live performance]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<p>Immersive live visuals at Gaîté Lyrique for <a href="https://www.instagram.com/le.frequency/?hl=en">Frequency</a> dance battle festival.</p>
+
+
+
+<p>With <a href="https://www.annabacheva.com/"><strong>Anna Bacheva</strong></a></p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Frequency 2020" src="https://player.vimeo.com/video/562814602?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<figure class="wp-block-gallery alignfull has-nested-images columns-default is-cropped wp-block-gallery-34 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/1-3.jpg" alt="" class="wp-image-460" srcset="./../wp-content/uploads/2023/10/1-3.jpg 1000w, ./../wp-content/uploads/2023/10/1-3-300x200.jpg 300w, ./../wp-content/uploads/2023/10/1-3-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/2-3.jpg" alt="" class="wp-image-461" srcset="./../wp-content/uploads/2023/10/2-3.jpg 1000w, ./../wp-content/uploads/2023/10/2-3-300x200.jpg 300w, ./../wp-content/uploads/2023/10/2-3-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/3-3.jpg" alt="" class="wp-image-464" srcset="./../wp-content/uploads/2023/10/3-3.jpg 1000w, ./../wp-content/uploads/2023/10/3-3-300x200.jpg 300w, ./../wp-content/uploads/2023/10/3-3-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/4-4.jpg" alt="" class="wp-image-465" srcset="./../wp-content/uploads/2023/10/4-4.jpg 1000w, ./../wp-content/uploads/2023/10/4-4-300x200.jpg 300w, ./../wp-content/uploads/2023/10/4-4-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/5-2.jpg" alt="" class="wp-image-462" srcset="./../wp-content/uploads/2023/10/5-2.jpg 1000w, ./../wp-content/uploads/2023/10/5-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/5-2-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1000" height="667" src="./../wp-content/uploads/2023/10/6-2.jpg" alt="" class="wp-image-463" srcset="./../wp-content/uploads/2023/10/6-2.jpg 1000w, ./../wp-content/uploads/2023/10/6-2-300x200.jpg 300w, ./../wp-content/uploads/2023/10/6-2-768x512.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>SUBSTANCES</title>
+		<link>./../substances/index.html</link>
+		
+		<dc:creator><![CDATA[neonminuit]]></dc:creator>
+		<pubDate>Mon, 17 Feb 2020 05:41:00 +0000</pubDate>
+				<category><![CDATA[Gallery]]></category>
+		<guid isPermaLink="false">./../index.html?p=79</guid>
+
+					<description><![CDATA[digital immersive sculpture]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-group has-global-padding is-layout-constrained wp-container-37 wp-block-group-is-layout-constrained">
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Substance #03 _ Neon Minuit" src="https://player.vimeo.com/video/422775830?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+</div>
+
+
+
+<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+<figure class="wp-block-gallery alignfull has-nested-images columns-4 is-cropped wp-block-gallery-38 is-layout-flex wp-block-gallery-is-layout-flex" style="margin-top:var(--wp--preset--spacing--20);margin-right:0;margin-bottom:var(--wp--preset--spacing--20);margin-left:0">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="768" height="1024" src="./../wp-content/uploads/2023/10/1.png" alt="" class="wp-image-80" srcset="./../wp-content/uploads/2023/10/1.png 768w, ./../wp-content/uploads/2023/10/1-225x300.png 225w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="768" height="1024" src="./../wp-content/uploads/2023/10/2.png" alt="" class="wp-image-81" srcset="./../wp-content/uploads/2023/10/2.png 768w, ./../wp-content/uploads/2023/10/2-225x300.png 225w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="571" height="1024" src="./../wp-content/uploads/2023/10/3-1.jpg" alt="" class="wp-image-84" srcset="./../wp-content/uploads/2023/10/3-1.jpg 571w, ./../wp-content/uploads/2023/10/3-1-167x300.jpg 167w" sizes="(max-width: 571px) 100vw, 571px" /></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="683" src="./../wp-content/uploads/2023/10/4-1-1024x683.jpg" alt="" class="wp-image-82" srcset="./../wp-content/uploads/2023/10/4-1-1024x683.jpg 1024w, ./../wp-content/uploads/2023/10/4-1-300x200.jpg 300w, ./../wp-content/uploads/2023/10/4-1-768x512.jpg 768w, ./../wp-content/uploads/2023/10/4-1-1536x1024.jpg 1536w, ./../wp-content/uploads/2023/10/4-1-2048x1365.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
