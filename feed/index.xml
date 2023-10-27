@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 25 Oct 2023 15:36:48 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 27 Oct 2023 16:26:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,18 +28,26 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Beyond Midgnight</title>
+		<title>Beyond Midnight</title>
 		<link>./../beyond-midgnight/index.html</link>
 		
 		<dc:creator><![CDATA[neonminuit]]></dc:creator>
 		<pubDate>Wed, 25 Oct 2023 15:36:33 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
+				<category><![CDATA[Gallery]]></category>
+		<category><![CDATA[Immersive]]></category>
+		<category><![CDATA[Interactive]]></category>
 		<guid isPermaLink="false">./../index.html?p=560</guid>
 
-					<description><![CDATA[Residency report]]></description>
+					<description><![CDATA[Residency Report]]></description>
 										<content:encoded><![CDATA[
 <div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
-<p><a href="./../taiwan-xr-residency-2/index.html" data-type="page" data-id="509">Residency report</a></p>
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="BEYOND_MIDNIGHT_KFF_REPORT" src="https://player.vimeo.com/video/878183662?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div></figure>
+
+
+
+<h1 class="wp-block-heading has-text-align-center"><a href="./../taiwan-xr-residency/index.html" data-type="page" data-id="509">Residency Report</a></h1>
 </div>
 ]]></content:encoded>
 					
@@ -106,7 +114,7 @@
 
 <div class="wp-block-group is-layout-flow wp-container-9 wp-block-group-is-layout-flow">
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img decoding="async" fetchpriority="high" width="683" height="1024" src="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg" alt="" class="wp-image-238" srcset="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/miroir-arcade-2-200x300.jpg 200w, ./../wp-content/uploads/2023/10/miroir-arcade-2-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1366x2048.jpg 1366w, ./../wp-content/uploads/2023/10/miroir-arcade-2.jpg 1667w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="683" height="1024" src="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg" alt="" class="wp-image-238" srcset="./../wp-content/uploads/2023/10/miroir-arcade-2-683x1024.jpg 683w, ./../wp-content/uploads/2023/10/miroir-arcade-2-200x300.jpg 200w, ./../wp-content/uploads/2023/10/miroir-arcade-2-768x1152.jpg 768w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1024x1536.jpg 1024w, ./../wp-content/uploads/2023/10/miroir-arcade-2-1366x2048.jpg 1366w, ./../wp-content/uploads/2023/10/miroir-arcade-2.jpg 1667w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
 
 
 
